@@ -30,18 +30,23 @@ main{
     font-weight: bolder;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap:64px;
     font-family: "Bitcount Single";
    
 }
 .text,#winner-msg{
    
     text-align: center;
-    font-size: 22px;
+    font-size: 25px;
+}
+#msg {
+    min-height: 100px;
 }
 #score{
+    margin-top: -44px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap:144px;
     align-items: center;
     font-size: clamp(32px, 4vw, 64px);
 
@@ -54,17 +59,17 @@ main{
     height:150px;
     
 }
+.box .emoji-box{
+    font-size: clamp(72px, 9vw, 140px);
+
+}
 #p-text,#c-text{
     font-size: 20px;
     /* font-weight: lighter */
 }
-button{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-     height: 150px;
-    font-size: clamp(48px, 6vw, 96px);
+.emoji-style{
+    
+font-size: clamp(42px, 5vw, 84px);
     background-color: #3a3f46;
     box-shadow:
             0 10px 25px rgba(0, 0, 0, 0.35),
@@ -78,6 +83,14 @@ button{
     line-height: 1;
     
 }
+.emoji-box{
+display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+}
+
 #options{
     display: flex;
     gap:24px;
@@ -85,4 +98,6 @@ button{
      margin:0 auto;
 
 }
-
+#options .emoji-box{
+    font-size: clamp(48px, 6vw, 96px);
+}
