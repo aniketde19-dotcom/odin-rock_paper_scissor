@@ -1,5 +1,5 @@
 
-//getting computer choice
+
 function getComputerChoice(min, max) {
     let play = Math.floor(Math.random() * (max - min)) + min;
     switch (play) {
@@ -14,31 +14,45 @@ function getComputerChoice(min, max) {
 
     }
 }
-//getting human choice
 let humanScore = 0, compScore = 0;
-function getHumanChoice(){
+const options = document.querySelector("#options");
+const winner = document.querySelector("#winner-msg");
+const compChoice = document.querySelector("#c-play");
+const humanChoice = document.querySelector("#p-play");
+const roundMsg = document.querySelector("#bottom");
+const humanText = document.querySelector("#p-text")
+const computerText = document.querySelector("#c-text");
+function handleClick(e){
+    let hchoice;
+    let target = e.target;
+    if (target.tagName == "BUTTON") {
+         hchoice = target.textContent;
+        playRound(hchoice);
+
+    }
     
-const options=document.querySelector("#options");
-options.addEventListener("click", e=>{
-let target=e.target;
-if(target.tagName=="BUTTON"){
-const hchoice=target.textContent;
-playRound(hchoice)
+    if (humanScore==5||compScore==5) {
+        endGame();
 }
-
-})
 }
-//round
+function endGame(){
+    options.removeEventListener("click", handleClick);
+    if (humanScore > compScore) {
+        winner.innerText = "You win!Fuck the machine"
+    } else if (compScore > humanScore) {
+        winner.innerText = "The matrix never looses"
+    } else {
+        winner.innerText = ""
+    }
 
+}
 function playRound(hchoice){
-    const compChoice=document.querySelector("#c-play");
-    const humanChoice=document.querySelector("#p-play");
     compChoice.innerText=getComputerChoice(0,3)
     // compChoice.classList.add("emoji-style")
     humanChoice.innerText=hchoice
     // humanChoice.classList.add("emoji-style");
     
-    const roundMsg=document.querySelector("#bottom")
+    
     switch (hchoice) {
         case "✊":
             if (compChoice.innerText == '✊') {
@@ -76,11 +90,11 @@ function playRound(hchoice){
             }
             break;
         }
-        const humanText=document.querySelector("#p-text")
-        const computerText=document.querySelector("#c-text");
+
     humanText.innerText = `Player: ${humanScore}`;
     computerText.innerText = `Computer: ${compScore}`;
-
-
 }
-getHumanChoice()
+options.addEventListener("click", handleClick)
+
+   
+
