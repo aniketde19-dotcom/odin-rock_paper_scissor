@@ -14,7 +14,6 @@ https://aniketde19-dotcom.github.io/odin-rock_paper_scissor/
 * Real-time UI updates after each round
 * Visual display of player and computer choices
 * Match winner announcement system
-* 
 * Clean structured interface using semantic sections
 
 ---
@@ -33,6 +32,7 @@ https://aniketde19-dotcom.github.io/odin-rock_paper_scissor/
 * The computer generates a random choice each round
 * Scores update automatically after every round
 * The first player to reach **5 points** wins the match
+* Scores reset by refreshing
 
 ---
 
