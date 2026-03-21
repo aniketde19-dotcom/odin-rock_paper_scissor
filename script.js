@@ -38,7 +38,7 @@ function handleClick(e){
 function endGame(){
     options.removeEventListener("click", handleClick);
     if (humanScore > compScore) {
-        winner.innerText = "You win!Fuck the machine"
+        winner.innerText = "You win!"
     } else if (compScore > humanScore) {
         winner.innerText = "The matrix never looses"
     } else {
